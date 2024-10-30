@@ -1,0 +1,54 @@
+<!-- res/layout/bottom_navigation.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottomNavigation"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:orientation="horizontal"
+    android:background="#FFFFFF">
+
+    <ImageView
+        android:id="@+id/homeIcon"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_home"
+        android:contentDescription="Home" />
+
+    <ImageView
+        android:id="@+id/libraryIcon"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:src="@drawable/ic_library"
+        android:contentDescription="Library" />
+
+    <ImageView
+        android:id="@+id/addIcon"
+        android:layout_width="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/ic_add"
+        android:contentDescription="Add" />
+
+    <ImageView
+        android:id="@+id/noteIcon"
+        android:layout_width="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/ic_note"
+        android:contentDescription="Note" />
+
+    <ImageView
+        android:id="@+id/profileIcon"
+        android:layout_marginTop="20dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/ic_profile"
+        android:contentDescription="Profile" />
+</LinearLayout>
