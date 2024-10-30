@@ -1,5 +1,6 @@
 package com.midterm.brainupdate;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -11,7 +12,7 @@ import android.widget.LinearLayout;
 public class BottomNavigationView {
 
     private LinearLayout bottomNavigationLayout;
-
+    public static final int CREATE_COURSE_REQUEST_CODE = 1;
     public BottomNavigationView(Context context, ViewGroup parentLayout) {
         // Inflate layout từ file XML
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -42,8 +43,11 @@ public class BottomNavigationView {
 
         addIcon.setOnClickListener(v -> {
             Intent intent = new Intent(context, CreatCourseActivity.class);
-            context.startActivity(intent);
+            if (context instanceof Activity) {
+                ((Activity) context).startActivityForResult(intent, CREATE_COURSE_REQUEST_CODE); // Thay đổi ở đây
+            }
         });
+
 
         noteIcon.setOnClickListener(v -> {
             Intent intent = new Intent(context, NoteActivity.class);

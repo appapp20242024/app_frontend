@@ -1,10 +1,14 @@
 package com.midterm.brainupdate;
 
+import static com.midterm.brainupdate.BottomNavigationView.CREATE_COURSE_REQUEST_CODE;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,10 +29,13 @@ public class LibraryActivity extends AppCompatActivity {
     private FlashcardAdapter courseAdapter;
     private RadioGroup radioGroup;
     private RadioButton radioFolders, radioCourses;
+    // Tạo danh sách courses
+    List<Flashcard> flashcardList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_library);
 
         BottomNavigationView bottomNavigation = new BottomNavigationView(this, findViewById(R.id.bottom_navigation_container));
@@ -53,8 +60,7 @@ public class LibraryActivity extends AppCompatActivity {
         folderList.add(new Folder("日本語"));
         folderList.add(new Folder("日本語　２"));
 
-        // Tạo danh sách courses
-        List<Flashcard> flashcardList = new ArrayList<>();
+
         flashcardList.add(new Flashcard("UI UX Design", 10));
         flashcardList.add(new Flashcard("Graphic Design", 20));
         flashcardList.add(new Flashcard("C＃", 20));
@@ -80,9 +86,31 @@ public class LibraryActivity extends AppCompatActivity {
                 recyclerViewCourses.setVisibility(View.VISIBLE);
             }
         });
+        courseAdapter.setOnItemClickListener(flashcard -> {
+            // Thực hiện hành động khi nhấn vào một flashcard
+            Toast.makeText(LibraryActivity.this, "Đã nhấn vào " + flashcard.getTitle(), Toast.LENGTH_SHORT).show();
+
+            // Bạn có thể chuyển sang Activity khác và truyền dữ liệu flashcard nếu cần
+             Intent intent = new Intent(LibraryActivity.this, Exam.class);
+             intent.putExtra("flashcard_title", flashcard.getTitle());
+             startActivity(intent);
+        });
 
         // Mặc định hiển thị danh sách học phần
         recyclerViewFolders.setVisibility(View.GONE);
         recyclerViewCourses.setVisibility(View.VISIBLE);
     }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == CREATE_COURSE_REQUEST_CODE && resultCode == RESULT_OK) {
+            String newFlashcardTitle = data.getStringExtra("flashcard_title");
+            if (newFlashcardTitle != null) {
+                flashcardList.add(new Flashcard(newFlashcardTitle, 20));
+                courseAdapter.notifyItemInserted(flashcardList.size() - 1);
+            }
+        }
+    }
+
+
 }

@@ -1,6 +1,8 @@
 package com.midterm.brainupdate;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,5 +41,12 @@ public class NoteActivity extends AppCompatActivity {
         // Khởi tạo adapter và gán cho RecyclerView
         FlashcardAdapter adapter = new FlashcardAdapter(flashcards);
         recyclerView.setAdapter(adapter);
+        // Thiết lập sự kiện nhấn cho các mục trong RecyclerView
+        adapter.setOnItemClickListener(note -> {
+            Toast.makeText(NoteActivity.this, "Đã nhấn vào: " + note.getTitle(), Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(NoteActivity.this, FlashCard1.class);
+
+            startActivity(intent);
+        });
     }
 }

@@ -2,4 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="selectedColor">#2196F3</color> <!-- Màu xanh cho câu hỏi được chọn -->
+    <color name="defaultColor">#D3D3D3</color> <!-- Màu xám cho các câu hỏi chưa chọn -->
+    <color name="correctAnswer">#00FF00</color>
+    <color name="wrongAnswer">#FF0000</color>
 </resources>

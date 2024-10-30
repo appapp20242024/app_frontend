@@ -24,6 +24,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/edittext_background"
         android:hint="Nhập tiêu đề"
+        android:textColor="@color/black"
         android:textColorHint="#B0B0B0"
         app:layout_constraintTop_toBottomOf="@+id/textViewTitle"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,6 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Thuật ngữ"
+            android:textColor="@color/black"
             android:background="@android:color/transparent"
             android:textColorHint="#B0B0B0"/>
 
@@ -64,35 +66,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Định nghĩa"
+            android:textColor="@color/black"
             android:background="@android:color/transparent"
             android:textColorHint="#B0B0B0"/>
     </LinearLayout>
 
-    <!-- Thêm thuật ngữ 2 (tương tự như thuật ngữ 1) -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/term_background"
-        android:padding="8dp"
-        android:orientation="vertical"
-        android:layout_marginBottom="8dp">
-
-        <EditText
-            android:id="@+id/editTextTerm2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Thuật ngữ"
-            android:background="@android:color/transparent"
-            android:textColorHint="#B0B0B0"/>
-
-        <EditText
-            android:id="@+id/editTextDefinition2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Định nghĩa"
-            android:background="@android:color/transparent"
-            android:textColorHint="#B0B0B0"/>
-    </LinearLayout>
 
 
     <EditText
