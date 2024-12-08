@@ -1,0 +1,14 @@
+package com.pwhs.quickmem.presentation.auth.signup.email
+
+import com.pwhs.quickmem.core.data.enums.UserRole
+
+data class SignUpWithEmailUiState(
+    val email: String = "",
+    val emailError: String = "",
+    val password: String = "",
+    val passwordError: String = "",
+    val birthday: String = "",
+    val birthdayError: String = "",
+    val userRole: UserRole = UserRole.STUDENT,
+    val isLoading: Boolean = false,
+)
