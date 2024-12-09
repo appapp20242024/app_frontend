@@ -34,3 +34,19 @@
 2. Follow the onboarding process to set up your profile.
 3. Create and manage your flashcards and study sets.
 4. Review flashcards, track progress, and get daily reminders for efficient studying.
+
+### PROJECT INFORMATION
+
+## Team Members (FE):
+
+- Do Long Nghia
+- Bui Quoc Khanh
+  
+## Supervisor:
+  Dr. Tran The Vu
+  
+## University:
+UNIVERSITY OF SCIENCE AND TECHNOLOGY - THE UNIVERSITY OF DANANG, Da Nang City
+
+This project was carried out as part of the course [Application programming], aiming to develop mobile application programming skills and apply modern technologies to solve practical problems.
+  
